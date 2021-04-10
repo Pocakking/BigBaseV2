@@ -1,6 +1,6 @@
-workspace "BigBaseV2"
+workspace "Exelon"
   architecture "x64"
-  startproject "BigBaseV2"
+  startproject "Exelon"
 
   configurations
   {
@@ -16,7 +16,7 @@ workspace "BigBaseV2"
   IncludeDir["json"] = "vendor/json/single_include"
   IncludeDir["MinHook"] = "vendor/MinHook/include"
   IncludeDir["ImGui"] = "vendor/ImGui"
-  IncludeDir["ImGuiImpl"] = "vendor/ImGui/examples"
+  IncludeDir["ImGuiImpl"] = "vendor/ImGui/backends"
   IncludeDir["StackWalker"] = "vendor/StackWalker/Main/StackWalker/"
   
   CppVersion = "C++17"
@@ -67,9 +67,10 @@ workspace "BigBaseV2"
       "vendor/%{prj.name}/imgui.cpp",
       "vendor/%{prj.name}/imgui_demo.cpp",
       "vendor/%{prj.name}/imgui_draw.cpp",
+      "vendor/%{prj.name}/imgui_tables.cpp",
       "vendor/%{prj.name}/imgui_widgets.cpp",
-      "vendor/%{prj.name}/examples/imgui_impl_dx11.cpp",
-      "vendor/%{prj.name}/examples/imgui_impl_win32.cpp"
+      "vendor/%{prj.name}/backends/imgui_impl_dx11.cpp",
+      "vendor/%{prj.name}/backends/imgui_impl_win32.cpp"
     }
 
     includedirs
@@ -141,8 +142,8 @@ workspace "BigBaseV2"
     DeclareMSVCOptions()
     DeclareDebugOptions()
 
-  project "BigBaseV2"
-    location "BigBaseV2"
+  project "Exelon"
+    location "Exelon"
     kind "SharedLib"
     language "C++"
 
@@ -197,12 +198,12 @@ workspace "BigBaseV2"
     flags { "NoImportLib", "Maps" }
 
     filter "configurations:Debug"
-      defines { "BIGBASEV2_DEBUG" }
+      defines { "EXELON_DEBUG" }
 
     filter "configurations:Release"
-      defines { "BIGBASEV2_RELEASE" }
+      defines { "EXELON_RELEASE" }
       optimize "speed"
     filter "configurations:Dist"
       flags { "LinkTimeOptimization", "FatalCompileWarnings" }
-      defines { "BIGBASEV2_DIST" }
+      defines { "EXELON_DIST" }
       optimize "speed"
