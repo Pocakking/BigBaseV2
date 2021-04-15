@@ -1,4 +1,4 @@
-# Exelon
+# BigBaseV3
 A mod menu base for Grand Theft Auto V.
 Strictly for educational purposes.
 
@@ -18,8 +18,8 @@ To build Exelon you need:
 
 To set up the build environment, run the following commands in a terminal:
 ```dos
-git clone https://github.com/ihxzey/Exelon.git --recurse-submodules
-cd Exelon
+git clone https://github.com/ihxzey/BigBaseV3.git --recurse-submodules
+cd BigBaseV3
 premake5 vs2019
 ```
 Now, you will be able to open the solution, and simply build it in Visual Studio.
