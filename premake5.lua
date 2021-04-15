@@ -1,6 +1,6 @@
-workspace "Exelon"
+workspace "BigBaseV3"
   architecture "x64"
-  startproject "Exelon"
+  startproject "BigBaseV3"
 
   configurations
   {
@@ -142,8 +142,8 @@ workspace "Exelon"
     DeclareMSVCOptions()
     DeclareDebugOptions()
 
-  project "Exelon"
-    location "Exelon"
+  project "BigBaseV3"
+    location "BigBaseV3"
     kind "SharedLib"
     language "C++"
 
@@ -198,12 +198,12 @@ workspace "Exelon"
     flags { "NoImportLib", "Maps" }
 
     filter "configurations:Debug"
-      defines { "EXELON_DEBUG" }
+      defines { "BIG_DEBUG" }
 
     filter "configurations:Release"
-      defines { "EXELON_RELEASE" }
+      defines { "BIG_RELEASE" }
       optimize "speed"
     filter "configurations:Dist"
       flags { "LinkTimeOptimization", "FatalCompileWarnings" }
-      defines { "EXELON_DIST" }
+      defines { "BIG_DIST" }
       optimize "speed"
